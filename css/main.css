@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* utility */
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block; }
+
+@media screen and (max-width: 639px) {
+  .remove-touch {
+    display: none; } }
+
+@media screen and (min-width: 640px) {
+  .remove-pc {
+    display: none; } }
+
+@media screen and (max-width: 639px) {
+  html {
+    font-size: 70%; } }
+
+body {
+  margin: 0px 0 0 0;
+  background: #F5F8FA;
+  font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+  color: #404040; }
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff; }
+
+.full-article {
+  margin: 0 auto;
+  padding: 30px 5% 40px; }
+  @media screen and (max-width: 639px) {
+    .full-article {
+      padding: 15px 5%; } }
+  .full-article ul {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 3px 0 20px; }
+  .full-article h2 {
+    max-width: 700px;
+    margin: 20px auto 30px;
+    font-size: 200%; }
+    @media screen and (max-width: 639px) {
+      .full-article h2 {
+        margin: 15px auto 20px; } }
+  .full-article h3 {
+    margin-bottom: 5px; }
+  .full-article p {
+    max-width: 700px;
+    margin: 5px auto;
+    font-size: 120%;
+    line-height: 180%; }
+    @media screen and (max-width: 639px) {
+      .full-article p {
+        line-height: 170%; } }
+    .full-article p.center {
+      text-align: center; }
+  .full-article a {
+    text-decoration: underline; }
+    .full-article a:visited {
+      color: #304030; }
+  .full-article .article-headline {
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px 20px 10px;
+    border-top: solid 1px #111;
+    color: #111111; }
+    @media screen and (max-width: 639px) {
+      .full-article .article-headline {
+        margin: 20px auto 10px;
+        padding: 15px 15px; } }
+    .full-article .article-headline h3 {
+      font-size: 140%;
+      margin: 0; }
+  .full-article.article-dark {
+    color: #fff; }
+    .full-article.article-dark .article-headline {
+      color: #f0f0f0;
+      border-color: #f0f0f0; }
+    .full-article.article-dark a {
+      text-decoration: underline; }
+
+#title-hero {
+  box-sizing: border-box;
+  height: 400px;
+  padding-top: 110px;
+  background-image: url(../img/title_background.png);
+  background-size: cover;
+  background-position: center; }
+  @media screen and (max-width: 640px) {
+    #title-hero {
+      height: 210px; } }
+  @media screen and (max-width: 640px) {
+    #title-hero {
+      padding-top: 50px; } }
+  #title-hero #title-logo {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center; }
+    #title-hero #title-logo img {
+      width: 95%; }
+  #title-hero #title-info {
+    margin: 45px auto;
+    padding: 0 10px;
+    max-width: 650px;
+    text-align: left; }
+    @media screen and (max-width: 640px) {
+      #title-hero #title-info {
+        margin: 30px auto; } }
+    #title-hero #title-info p {
+      color: #fff;
+      font-weight: bold;
+      font-size: 130%;
+      margin: 5px 0; }
+    #title-hero #title-info h4 {
+      color: #fff;
+      font-size: 150%;
+      margin: 8px 0; }
+
+#article-intro {
+  background: #f0f0f0; }
+  #article-intro #socialicons {
+    margin-top: 20px; }
+    #article-intro #socialicons img {
+      height: 35px;
+      margin: 0 10px; }
+
+#article-inquiry {
+  height: 600px;
+  background-image: url(../img/pamphlet.png);
+  background-size: cover;
+  background-position: center; }
+  @media screen and (max-width: 640px) {
+    #article-inquiry {
+      height: 650px; } }
+  #article-inquiry #inquiry-form-pc {
+    text-align: center; }
+    @media screen and (max-width: 639px) {
+      #article-inquiry #inquiry-form-pc {
+        display: none; } }
+    #article-inquiry #inquiry-form-pc iframe {
+      width: 600px;
+      height: 375px; }
+  #article-inquiry #inquiry-form-touch {
+    text-align: center; }
+    @media screen and (min-width: 640px) {
+      #article-inquiry #inquiry-form-touch {
+        display: none; } }
+    #article-inquiry #inquiry-form-touch iframe {
+      width: 300px;
+      height: 460px; }
+
+#article-us {
+  background: #013; }
+
+/*# sourceMappingURL=main.css.map */
