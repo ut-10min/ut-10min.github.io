@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/favicon.ico">
 
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://ut-10min.github.io/" />
+
+        <!-- 構造化データ（WebSite + SearchAction） -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://ut-10min.github.io/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ut-10min.github.io/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+        </script>
+
     <!-- OGP -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ut10min">
@@ -234,6 +251,17 @@
             <!-- <p>本団体では、企画に参加・協力してくださる院生（含: 六年制学科高学年生）の方を募集しています！お問い合わせフォームからお気軽にお声掛けください。</p> -->
         </div>
     </div>
+
+
+    <!-- 検索用：最新年度のリンク群（非表示） -->
+    <div id="latest-links" hidden>
+        <h2>最新の講演情報</h2>
+        <ul>
+          <li><a href="https://ut-10min.github.io/mf98/">2025年度講演トップページ</a></li>
+          <li><a href="https://ut-10min.github.io/mf98/talks.html">2025年度講演一覧</a></li>
+          <li><a href="https://ut-10min.github.io/mf98/timetable.html">2025年度タイムテーブル</a></li>
+        </ul>
+      </div>
 </body>
 
 </html>
