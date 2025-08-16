@@ -157,4 +157,20 @@ body {
   background: #013; 
   color: #F5F8FA;}
 
-/*# sourceMappingURL=main.css.map */
+.video-container {
+    position: relative;
+    width: 70%;              /* 横幅をページの7割に設定 */
+    margin: 0 auto;          /* 中央寄せ */
+    padding-bottom: 39.375%; /* 16:9比率の高さ (70% * 9/16 = 39.375%) */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* 親要素の70%幅にフィット */
+    height: 100%;  /* アスペクト比を維持 */
+}
