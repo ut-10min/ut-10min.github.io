@@ -159,9 +159,10 @@ body {
 
 .video-container {
     position: relative;
-    width: 70%;              /* 横幅をページの7割に設定 */
-    margin: 0 auto;          /* 中央寄せ */
-    padding-bottom: 39.375%; /* 16:9比率の高さ (70% * 9/16 = 39.375%) */
+    width: 100%;              /* スマホでは画面幅いっぱいに広げる */
+    max-width: 800px;         /* PCでは最大幅を制限（お好みで調整可） */
+    margin: 0 auto;           /* 中央寄せ */
+    padding-bottom: 56.25%;   /* 16:9比率 (高さ調整) */
     height: 0;
     overflow: hidden;
     background: #000;
@@ -171,6 +172,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;   /* 親要素の70%幅にフィット */
+    width: 100%;   /* 親要素の幅にフィット */
     height: 100%;  /* アスペクト比を維持 */
 }
