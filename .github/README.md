@@ -8,13 +8,29 @@
     - [ ] 日付が分からない部分は、予め"XX"におきかえる
   - [ ] 直近の五月祭/駒場祭を過去のログに加筆
 - [ ] 各五月祭/駒場祭のページ
-  - [ ] 新しいレポジトリを作成
+  - [ ] リモートで新しいレポジトリを作成
     - [ ] レポジトリ名は "mfXX" または "kfXX" (XXは番号)
-    - [ ] ファイルは過去直近のmfXX/kfXXのレポジトリからコピーすればよい 
+  - [ ] ファイルを過去直近のmfXX/kfXXのレポジトリからコピー
+    - [ ] ローカルでフォルダことコピーした後、git initして新しいレポジトリとして管理開始
+  - [ ] ローカルで内容を更新
+    - [ ] index.html
+      - [ ] 日付、会場、時間を未定に
+      - [ ] meta情報（description, keywords, title, twitterカード, ogp）を更新
+    - [ ] timetable.html
+      - [ ] meta情報（description, keywords, title, twitterカード, ogp）を更新
+    - [ ] ローカルで動作確認
+      - [ ] cdで作成したフォルダに行き、python3 -m http.serverをターミナルで実行
+  - [ ] リモートにpush 
+      - [ ] git remote add origin <新しいレポジトリのurl> 
+      - [ ] git branch -M main 
+      - [ ] git push -u origin main
+
 - [ ] github pages上でページの公開設定を行う
     - [ ] 公開設定方法は例えば以下の記事を参照
     - [ ] https://qiita.com/snow_swallow/items/631bbceabbb953da2646
-
+- [ ] google search consoleの調整
+  - [ ] 新しい五月祭/駒場祭のページとtalks,timetableを登録
+  - [ ] 古い五月祭/駒場祭のページとtalks,timetableを復活
 
 ### 五月祭/駒場祭詳細判明後
 - [ ] ut-10min.github.io/XX/index.html
