@@ -37,7 +37,7 @@
   - [ ] 日付、会場、時間を更新
 
 ### 講演内容、タイムテーブル確定後
-- [ ]js周りを更新
+- [ ] js周りを更新
   - [ ] ut-10min.github.io/XX/data.js
     - [ ] data.jsの講演者名、講演者所属、講演者分野、講演題目、講演アブストを更新
   - [ ] ut-10min.github.io/XX/timedata.js
