@@ -39,13 +39,27 @@
     <meta property="og:image" content="https://ut-10min.github.io/img/kf_min.png">
     <meta property="og:site_name" content="10分で伝えます！東大研究最前線">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123778672-1"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics (idle-load to reduce main-thread work) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-123778672-1');
+        (function() {
+            const loadGtag = function() {
+                const s = document.createElement('script');
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=UA-123778672-1';
+                s.async = true;
+                s.onload = function() {
+                    gtag('js', new Date());
+                    gtag('config', 'UA-123778672-1');
+                };
+                document.head.appendChild(s);
+            };
+            if (window.requestIdleCallback) {
+                requestIdleCallback(loadGtag, { timeout: 1500 });
+            } else {
+                window.addEventListener('load', loadGtag);
+            }
+        })();
     </script>
 </head>
 
@@ -71,7 +85,7 @@
                 <a class="button-link secondary large" href="https://ut-10min.github.io/mf99/timetable.html">タイムテーブル</a>
             </div>
             <p class="section-note">
-                </br>現地／オンラインのハイブリッド対応です。現地参加は登録不要です。
+                <br>現地／オンラインのハイブリッド対応です。現地参加は登録不要です。
                 オンライン講演は Zoom ウェビナーを通して配信します。オンラインのお申込みには参加登録が必要です。</br>
                 開催日程や開催場所、オンライン参加登録はトップページを、講演内容とタイムテーブルは
                 「講演内容」「タイムテーブル」をご確認ください。
@@ -83,7 +97,7 @@
                 <a class="button-link secondary large" href="https://ut-10min.github.io/kf76/timetable.html">タイムテーブル</a>
             </div>
             <p class="section-note">
-                </br>前回（2025年度駒場祭）の講演概要やタイムテーブルもこちらから確認できます。スケジュール感や次回の雰囲気を知りたい方はご活用ください。
+                <br>前回（2025年度駒場祭）の講演概要やタイムテーブルもこちらから確認できます。スケジュール感や次回の雰囲気を知りたい方はご活用ください。
             </p>
             <p class="center" id="socialicons">
                 <a href="https://twitter.com/ut10min" target="_blank">
@@ -102,6 +116,7 @@
                         src="https://www.youtube.com/embed/mLT0P1CSfqg" 
                         title="YouTube video player" 
                         frameborder="0" 
+                        loading="lazy"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
                         allowfullscreen>
                     </iframe>
@@ -118,7 +133,7 @@
                 <a class="button-link secondary large" href="archive.html">過去のアーカイブ</a>
             </div>
             <p class="section-note">
-                </br>次回以降の講演情報の配信を希望される方は「講演情報希望フォーム」にご登録ください。企画へのご質問は「お問い合わせフォーム」からお気軽にどうぞ（こちらはオンライン講演の申込フォームではありません）。ご依頼により出張講演も行っています。これまでの五月祭／駒場祭のリンクは「過去のアーカイブ」にまとめています。
+                <br>次回以降の講演情報の配信を希望される方は「講演情報希望フォーム」にご登録ください。企画へのご質問は「お問い合わせフォーム」からお気軽にどうぞ（こちらはオンライン講演の申込フォームではありません）。ご依頼により出張講演も行っています。これまでの五月祭／駒場祭のリンクは「過去のアーカイブ」にまとめています。
             </p>
         </div>
 
