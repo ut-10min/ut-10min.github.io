@@ -252,6 +252,55 @@ body {
 .archive-table .muted {
   color: #6b7280; }
 
+@media screen and (max-width: 640px) {
+  .table-wrapper {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  .archive-table,
+  .archive-table thead,
+  .archive-table tbody,
+  .archive-table th,
+  .archive-table td,
+  .archive-table tr {
+    display: block;
+    width: 100%;
+  }
+  .archive-table thead {
+    display: none;
+  }
+  .archive-table tbody tr {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  }
+  .archive-table tbody th {
+    width: auto;
+    background: transparent;
+    padding: 0 0 8px;
+    font-size: 120%;
+  }
+  .archive-table tbody td {
+    border: none;
+    padding: 6px 0;
+    font-size: 110%;
+  }
+  .archive-table tbody td::before {
+    content: attr(data-label) "：";
+    font-weight: bold;
+    color: #0d274d;
+    display: inline-block;
+    width: 80px;
+  }
+  .archive-table a {
+    word-break: break-word;
+  }
+}
+
 .button-link {
   display: inline-flex;
   align-items: center;
