@@ -34,6 +34,12 @@
   html {
     font-size: 70%; } }
 
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 92%;
+  }
+}
+
 body {
   margin: 0px 0 0 0;
   background: var(--color-neutral-solid-gray-50);
@@ -151,12 +157,13 @@ body {
       margin: 8px 0; }
 
 #article-intro {
-  background: #eef3fb; }
-  #article-intro #socialicons {
-    margin-top: 20px; }
-    #article-intro #socialicons img {
-      height: 35px;
-      margin: 0 10px; }
+  background: var(--color-neutral-white); }
+
+#article-movie #socialicons {
+  margin-top: 22px; }
+  #article-movie #socialicons img {
+    height: 35px;
+    margin: 0 10px; }
 
 #article-inquiry {
   height: 600px;
@@ -184,26 +191,24 @@ body {
       height: 460px; }
 
 #article-us {
-  background: #013; 
-  color: #F5F8FA;}
+  background: #eef3fb;
+  color: #2c2f36;}
 
 .video-container {
     position: relative;
     width: 100%;              /* スマホでは画面幅いっぱいに広げる */
-    max-width: 800px;         /* PCでは最大幅を制限（お好みで調整可） */
+    max-width: 720px;         /* PCでは最大幅を720px程度に制限 */
     margin: 0 auto;           /* 中央寄せ */
-    padding-bottom: 56.25%;   /* 16:9比率 (高さ調整) */
-    height: 0;
+    aspect-ratio: 16 / 9;     /* YouTubeの標準比率を維持 */
     overflow: hidden;
     background: #000;
 }
 
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     width: 100%;   /* 親要素の幅にフィット */
     height: 100%;  /* アスペクト比を維持 */
+    border: 0;
 }
 
 /* archive */
@@ -374,7 +379,7 @@ body {
   background: var(--color-neutral-white);
   border: 1px solid var(--color-neutral-solid-gray-100);
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 26px rgba(0, 35, 75, 0.13);
   padding: 20px 5% 24px;
 }
 
