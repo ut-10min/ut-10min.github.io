@@ -480,3 +480,10 @@ body {
     font-size: 2rem;
   }
 }
+
+/* SNSのYouTubeロゴは横長画像なので、35x35に潰さず自然な縦横比で表示する */
+#article-movie #socialicons img.sns-icon-youtube {
+  width: auto;
+  height: 35px;
+  object-fit: contain;
+}
