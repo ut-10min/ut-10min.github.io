@@ -119,18 +119,24 @@
             </div>
             <div class="full-article" id="article-movie">
                 <h2>紹介動画・SNS</h2>
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/mLT0P1CSfqg" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        loading="lazy"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="video-container youtube-facade">
+                    <button
+                        class="youtube-load"
+                        type="button"
+                        data-youtube-id="mLT0P1CSfqg"
+                        aria-label="紹介動画を再生する">
+                        <img
+                            src="https://i.ytimg.com/vi/mLT0P1CSfqg/hqdefault.jpg"
+                            width="480"
+                            height="360"
+                            loading="lazy"
+                            decoding="async"
+                            alt="紹介動画のサムネイル">
+                        <span class="youtube-play" aria-hidden="true">▶</span>
+                    </button>
                 </div>
                 <p class="center" id="socialicons">
-                    各種の公式SNSはこちらからどうぞ！感想等は <b>#ut10min</b> をつけて呟いてください。<br>
+                    各種の公式SNSはこちらからどうぞ！感想等は <b>#ut10min</b> をつけて呟いて下さい。<br>
                     <a href="https://twitter.com/ut10min" target="_blank" aria-label="X (旧Twitter)" rel="noopener">
                         <img src="img/X.png" width="35" height="35" loading="lazy" decoding="async" alt="X (旧Twitter)"></a>
                     <a href="https://www.facebook.com/10minScience/" target="_blank" aria-label="Facebook" rel="noopener">
@@ -175,6 +181,26 @@
           <li><a href="https://ut-10min.github.io/mf99/timetable.html">2026年度タイムテーブル</a></li>
         </ul>
       </div>
+
+    <script>
+        (function () {
+            document.addEventListener("click", function (event) {
+                const button = event.target.closest(".youtube-load");
+                if (!button) return;
+
+                const id = button.dataset.youtubeId;
+                const iframe = document.createElement("iframe");
+
+                iframe.src = "https://www.youtube.com/embed/" + encodeURIComponent(id) + "?autoplay=1";
+                iframe.title = "YouTube video player";
+                iframe.loading = "lazy";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+                iframe.allowFullscreen = true;
+
+                button.replaceWith(iframe);
+            });
+        })();
+    </script>
 </body>
 
 </html>

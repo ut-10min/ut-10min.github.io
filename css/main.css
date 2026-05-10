@@ -121,8 +121,9 @@ body {
 
 #title-hero {
   box-sizing: border-box;
-  height: 400px;
-  padding-top: 110px;
+  /* 画面幅に応じて高さと余白を連続的に変える */
+  height: clamp(210px, 34.5vw, 400px);
+  padding-top: clamp(50px, 9.5vw, 110px);
   /* fallback -> WebP。対応ブラウザでは軽量なWebPを使い、非対応環境ではPNGに戻す */
   background-image: url(../img/title_background.png);
   background-image: image-set(
@@ -131,20 +132,13 @@ body {
   );
   background-size: cover;
   background-position: center; }
-  @media screen and (max-width: 640px) {
-    #title-hero {
-      height: 210px; } }
-  @media screen and (max-width: 640px) {
-    #title-hero {
-      padding-top: 50px; } }
   #title-hero #title-logo {
     margin: 0 auto;
-    max-width: 600px;
+    width: min(95%, 600px);
     text-align: center; }
     #title-hero #title-logo img {
       display: block;
-      width: 95%;
-      max-width: 600px;
+      width: 100%;
       height: auto;
       margin: 0 auto; }
   #title-hero #title-info {
@@ -397,4 +391,71 @@ body {
 
 .info-tile h2 {
   margin-top: 0;
+}
+
+/* YouTube facade: initial load shows only a lightweight thumbnail.
+   The real YouTube iframe is inserted only after the user clicks. */
+.youtube-facade {
+  background: #000;
+}
+
+.youtube-load {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: #000;
+  cursor: pointer;
+  font: inherit;
+}
+
+.youtube-load img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.youtube-load::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.28)
+  );
+  pointer-events: none;
+}
+
+.youtube-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 54px;
+  border-radius: 14px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.72);
+  font-size: 2.4rem;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.youtube-load:hover .youtube-play,
+.youtube-load:focus-visible .youtube-play {
+  background: rgba(0, 85, 173, 0.92);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.youtube-load:focus-visible {
+  outline: 4px solid var(--color-neutral-black);
+  outline-offset: 4px;
 }
