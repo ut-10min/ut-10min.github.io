@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="preconnect" href="https://static.doubleclick.net" crossorigin>
-    <link rel="preload" as="image" href="img/title_background.png" fetchpriority="high">
-    <link rel="preload" as="image" href="img/title.png" fetchpriority="high">
+    <!-- LCP候補のタイトルロゴだけを優先読み込みする。背景画像はCSSから通常読み込みにして帯域競合を避ける -->
+    <link rel="preload" as="image" href="img/title.webp" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/favicon.ico">
 
@@ -73,7 +73,16 @@
         <!-- タイトル -->
         <div id="title-hero">
             <div id="title-logo">
-                <img src="img/title.png" fetchpriority="high" decoding="async" alt="10分で伝えます！東大研究最前線">
+                <picture>
+                    <source srcset="img/title.webp" type="image/webp">
+                    <img
+                        src="img/title.png"
+                        width="1324"
+                        height="382"
+                        fetchpriority="high"
+                        decoding="async"
+                        alt="10分で伝えます！東大研究最前線">
+                </picture>
             </div>
         </div>
         <!-- 概要 + 最新リンク + SNS + 紹介動画 -->
@@ -123,13 +132,13 @@
                 <p class="center" id="socialicons">
                     各種の公式SNSはこちらからどうぞ！感想等は <b>#ut10min</b> をつけて呟いてください。<br>
                     <a href="https://twitter.com/ut10min" target="_blank" aria-label="X (旧Twitter)" rel="noopener">
-                        <img src="img/X.png" alt="X (旧Twitter)"></a>
+                        <img src="img/X.png" width="35" height="35" loading="lazy" decoding="async" alt="X (旧Twitter)"></a>
                     <a href="https://www.facebook.com/10minScience/" target="_blank" aria-label="Facebook" rel="noopener">
-                        <img src="img/facebook.png" alt="Facebook"></a>
+                        <img src="img/facebook.png" width="35" height="35" loading="lazy" decoding="async" alt="Facebook"></a>
                     <a href="https://www.instagram.com/ut10min/" target="_blank" aria-label="Instagram" rel="noopener">
-                        <img src="img/instagram.png" alt="Instagram"></a>
+                        <img src="img/instagram.png" width="35" height="35" loading="lazy" decoding="async" alt="Instagram"></a>
                     <a href="https://www.youtube.com/@ut10min-youtube" target="_blank" aria-label="YouTube" rel="noopener">
-                        <img src="img/youtube.png" alt="YouTube"></a>
+                        <img src="img/youtube.png" width="35" height="35" loading="lazy" decoding="async" alt="YouTube"></a>
                 </p>
             </div>
         </div>

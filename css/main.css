@@ -123,7 +123,12 @@ body {
   box-sizing: border-box;
   height: 400px;
   padding-top: 110px;
+  /* fallback -> WebP。対応ブラウザでは軽量なWebPを使い、非対応環境ではPNGに戻す */
   background-image: url(../img/title_background.png);
+  background-image: image-set(
+    url(../img/title_background.webp) type("image/webp"),
+    url(../img/title_background.png) type("image/png")
+  );
   background-size: cover;
   background-position: center; }
   @media screen and (max-width: 640px) {
@@ -137,7 +142,11 @@ body {
     max-width: 600px;
     text-align: center; }
     #title-hero #title-logo img {
-      width: 95%; }
+      display: block;
+      width: 95%;
+      max-width: 600px;
+      height: auto;
+      margin: 0 auto; }
   #title-hero #title-info {
     margin: 45px auto;
     padding: 0 10px;
@@ -162,8 +171,11 @@ body {
 #article-movie #socialicons {
   margin-top: 22px; }
   #article-movie #socialicons img {
+    display: inline-block;
+    width: 35px;
     height: 35px;
-    margin: 0 10px; }
+    margin: 0 10px;
+    vertical-align: middle; }
 
 #article-inquiry {
   height: 600px;
